@@ -17,6 +17,7 @@ BACKUP_PATH=~/Documents/Deluge-Backup/${SD_NAME// /_}
 find $SD_PATH -name "*.XML" > $INCLUDE_FILE
 cat $SD_PATH/SONGS/*.XML $SD_PATH/KITS/*.XML $SD_PATH/SYNTHS/*.XML | sed -ne '/fileName/{s/.*<fileName>\(.*\)<\/fileName>.*/\1/p;}' | sort -u | tail -n +2 >> $INCLUDE_FILE
 cat $SD_PATH/SONGS/*.XML $SD_PATH/KITS/*.XML $SD_PATH/SYNTHS/*.XML | sed -ne '/filePath/{s/.*filePath="\(.*\)".*/\1/p;}' | sort -u | tail -n +2 >> $INCLUDE_FILE
+cat $SD_PATH/SONGS/*.XML $SD_PATH/KITS/*.XML $SD_PATH/SYNTHS/*.XML | sed -ne '/fileName/{s/.*fileName="\(.*\)".*/\1/p;}' | sort -u | tail -n +2 >> $INCLUDE_FILE
 find $SD_PATH/SAMPLES/RESAMPLE -name "*.WAV" >> $INCLUDE_FILE
 
 #echo "PROGRESS:0"
