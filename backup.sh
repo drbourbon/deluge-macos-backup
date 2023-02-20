@@ -1,5 +1,6 @@
 #!/bin/bash
-BACKUP_SCRIPT=./rsync_tmbackup.sh 
+SCRIPT_PATH="${BASH_SOURCE:-$0}"
+BACKUP_SCRIPT=${SCRIPT_PATH}/rsync_tmbackup.sh 
 INCLUDE_FILE=/tmp/deluge_include.txt
 SD_PATH=../../..
 #SD_PATH=.
